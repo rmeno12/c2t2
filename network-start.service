@@ -1,0 +1,11 @@
+[Unit]
+Description=Start up networking
+
+[Service]
+Type=simple
+ExecStart=python3 /opt/c2t2.py
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=default.target
