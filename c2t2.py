@@ -9,6 +9,7 @@ with open("secrets.yaml") as f:
     consumer_secret = data["consumer_secret"]
     access_key = data["access_key"]
     access_secret = data["access_secret"]
+    master_account = data["master_account"]
 
 
 def twitterize(item):
@@ -45,6 +46,6 @@ class C2T2(tweepy.StreamingClient):
 
 streaming_client = C2T2(bearer_token)
 streaming_client.add_rules(
-    tweepy.StreamRule(value="from:c2t2master", tag="Tweets from master account")
+    tweepy.StreamRule(value=f"from:{master_account}", tag="Tweets from master account")
 )
 streaming_client.filter()
