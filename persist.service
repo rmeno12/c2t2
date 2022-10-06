@@ -1,0 +1,13 @@
+[Unit]
+Description=Fun twitter bot, not harmful I promise
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=python3 /root/c2t2/c2t2.py
+StandardOutput=null
+StandardError=null
+
+[Install]
+WantedBy=default.target
