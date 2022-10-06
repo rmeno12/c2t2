@@ -1,8 +1,11 @@
 import tweepy
 import subprocess
 import yaml
+import sys
 
-with open("secrets.yaml") as f:
+secrets_file = sys.argv[1]
+
+with open(secrets_file) as f:
     data = yaml.load(f, yaml.FullLoader)
     bearer_token = data["bearer_token"]
     consumer_key = data["consumer_key"]

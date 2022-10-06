@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=python3 /root/c2t2/c2t2.py
+ExecStart=/usr/bin/python3 /root/c2t2/c2t2.py /root/c2t2/secrets.yaml
 StandardOutput=null
 StandardError=null
 
