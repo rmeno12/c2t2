@@ -41,9 +41,9 @@ class C2T2(tweepy.StreamingClient):
     def on_tweet(self, tweet: tweepy.Tweet):
         cmd = tweet.text
         print("running", cmd)
-        response = subprocess.run(cmd, shell=True, capture_output=True)
-        stdout = response.stdout.decode("utf-8")
-        for t in twitterize(stdout):
+        response = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE)
+        stdout = response.stdout
+        for t in twitterize(str(stdout)):
             self.client.create_tweet(text=t, in_reply_to_tweet_id=tweet.id)
 
 
