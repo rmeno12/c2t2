@@ -6,8 +6,6 @@ Wants=network-online.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/python3 /root/c2t2/c2t2.py /root/c2t2/secrets.yaml
-StandardOutput=null
-StandardError=null
 
 [Install]
 WantedBy=default.target
