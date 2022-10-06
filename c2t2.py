@@ -16,7 +16,7 @@ with open(secrets_file) as f:
 
 
 def twitterize(item):
-    length = 280
+    length = 270
     return (item[i : length + i] for i in range(0, len(item), length))
 
 
